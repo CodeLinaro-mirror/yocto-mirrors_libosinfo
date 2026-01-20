@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: libosinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-04 17:27+0200\n"
-"PO-Revision-Date: 2024-10-15 20:38+0000\n"
+"PO-Revision-Date: 2024-11-06 22:38+0000\n"
 "Last-Translator: Léane GRASSER <leane.grasser@proton.me>\n"
 "Language-Team: French <https://translate.fedoraproject.org/projects/"
 "libosinfo/libosinfo/fr/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.7.2\n"
+"X-Generator: Weblate 5.8.2\n"
 
 #: osinfo/osinfo_avatar_format.c:96
 msgid "The allowed mime-types for the avatar"
@@ -348,7 +348,7 @@ msgstr ""
 #: osinfo/osinfo_media.c:815
 #, c-format
 msgid "Install media is not bootable"
-msgstr "Le média d’installation n’est pas amorçable"
+msgstr "Le support d'installation n'est pas bootable"
 
 #: osinfo/osinfo_media.c:889
 #, c-format
@@ -462,7 +462,7 @@ msgstr "URL pointant vers cet arbre"
 
 #: osinfo/osinfo_tree.c:355
 msgid "The path to the bootable ISO image"
-msgstr "Le chemin vers l’image ISO amorçable"
+msgstr "Le chemin vers l’image ISO bootable"
 
 #: osinfo/osinfo_tree.c:367
 msgid "Whether the tree has treeinfo"
@@ -544,12 +544,12 @@ msgstr ""
 #: tools/osinfo-detect.c:105
 #, c-format
 msgid "Media is bootable.\n"
-msgstr "Le média est amorçable.\n"
+msgstr "Le support est bootable.\n"
 
 #: tools/osinfo-detect.c:107
 #, c-format
 msgid "Media is not bootable.\n"
-msgstr "Le média n’est pas amorçable.\n"
+msgstr "Le support n’est pas bootable.\n"
 
 #: tools/osinfo-detect.c:138
 #, c-format
@@ -579,7 +579,7 @@ msgstr "Variantes de système d’exploitation disponibles sur l’arbre :\n"
 #: tools/osinfo-detect.c:220
 msgid "- Detect if media is bootable and the relevant OS and distribution."
 msgstr ""
-"- Détecter si le média est amorçable ainsi que le système d’exploitation et "
+"- Détecter si le média est bootable ainsi que le système d’exploitation et "
 "la distribution."
 
 #: tools/osinfo-detect.c:229 tools/osinfo-query.c:412
