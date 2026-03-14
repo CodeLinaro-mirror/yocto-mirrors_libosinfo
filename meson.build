@@ -2,7 +2,7 @@ project(
     'libosinfo', 'c',
     version: '1.13.0',
     license: 'LGPLv2+',
-    meson_version: '>= 0.49.0',
+    meson_version: '>= 0.51.0',
     default_options: [
         'buildtype=debugoptimized',
         'c_std=gnu99',
@@ -279,12 +279,20 @@ hw_ids = [
     },
 ]
 
+hwdata_dep = dependency('hwdata', disabler: true, required: false)
+hwdata_dir = hwdata_dep.get_variable(pkgconfig: 'pkgdatadir', default_value: '')
+
 foreach ids: hw_ids
     name = ids['name']
     ids_files = ids['files']
     file_name = '@0@.ids'.format(name)
 
     ids_path = get_option('with-@0@-ids-path'.format(name))
+
+    if ids_path == '' and hwdata_dir != ''
+        ids_path = join_paths(hwdata_dir, file_name)
+    endif
+
     if ids_path == ''
         install_file = meson.is_cross_build()
 
