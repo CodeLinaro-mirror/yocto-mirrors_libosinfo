@@ -191,43 +191,41 @@ libosinfo_gir_sources = [
     libosinfo_enum_types,
 ]
 
-if host_machine.system() != 'windows'
-    if enable_introspection
-        libosinfo_gir = gnome.generate_gir(
-            libosinfo,
-            sources: libosinfo_gir_sources,
-            nsversion: '1.0',
-            namespace: 'Libosinfo',
-            export_packages: versioned_name,
-            includes: [
-                'GObject-2.0',
-                'Gio-2.0',
-                'libxml2-2.0',
-            ],
-            dependencies: libosinfo_dependencies,
-            header: 'osinfo/osinfo.h',
-            identifier_prefix: 'Osinfo',
-            symbol_prefix: 'osinfo',
+if enable_introspection
+    libosinfo_gir = gnome.generate_gir(
+        libosinfo,
+        sources: libosinfo_gir_sources,
+        nsversion: '1.0',
+        namespace: 'Libosinfo',
+        export_packages: versioned_name,
+        includes: [
+            'GObject-2.0',
+            'Gio-2.0',
+            'libxml2-2.0',
+        ],
+        dependencies: libosinfo_dependencies,
+        header: 'osinfo/osinfo.h',
+        identifier_prefix: 'Osinfo',
+        symbol_prefix: 'osinfo',
+        install: true,
+        install_dir_gir: libosinfo_girdir,
+        install_dir_typelib: libosinfo_typelibdir,
+    )
+
+    libosinfo_gir_dep = declare_dependency(
+        sources: libosinfo_gir,
+    )
+
+    if enable_vapi
+        libosinfo_vapi = gnome.generate_vapi(
+            versioned_name,
             install: true,
-            install_dir_gir: libosinfo_girdir,
-            install_dir_typelib: libosinfo_typelibdir,
+            packages: [
+                'gobject-2.0',
+                'gio-2.0',
+                'libxml-2.0',
+            ],
+            sources: libosinfo_gir[0],
         )
-
-        libosinfo_gir_dep = declare_dependency(
-            sources: libosinfo_gir,
-        )
-
-        if enable_vapi
-            libosinfo_vapi = gnome.generate_vapi(
-                versioned_name,
-                install: true,
-                packages: [
-                    'gobject-2.0',
-                    'gio-2.0',
-                    'libxml-2.0',
-                ],
-                sources: libosinfo_gir[0],
-            )
-        endif
     endif
 endif
