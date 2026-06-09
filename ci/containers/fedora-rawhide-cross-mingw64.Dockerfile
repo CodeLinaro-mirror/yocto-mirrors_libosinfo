@@ -55,7 +55,7 @@ RUN nosync dnf --quiet install -y \
                        mingw64-gettext \
                        mingw64-glib2 \
                        mingw64-headers \
-                       mingw64-libsoup \
+                       mingw64-libsoup3 \
                        mingw64-libxml2 \
                        mingw64-libxslt \
                        mingw64-pkg-config && \

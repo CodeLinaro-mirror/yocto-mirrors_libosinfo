@@ -35,7 +35,7 @@ function install_buildenv() {
                 mingw32-gettext \
                 mingw32-glib2 \
                 mingw32-headers \
-                mingw32-libsoup \
+                mingw32-libsoup3 \
                 mingw32-libxml2 \
                 mingw32-libxslt \
                 mingw32-pkg-config
